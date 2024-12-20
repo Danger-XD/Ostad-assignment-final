@@ -10,8 +10,6 @@ import { upload } from '../app/utilities/multerConfig.js';
 
 const router = express.Router();
 
-
-
 // User routes
 router.post('/register', UserController.Register);
 router.post('/login', UserController.Login);
