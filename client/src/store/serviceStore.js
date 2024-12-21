@@ -8,7 +8,9 @@ const ServiceStore = create((set) => ({
   // Fetch all services
   ServiceListRequest: async () => {
     try {
-      const res = await axios.get("/api/ServiceList");
+      const res = await axios.get(
+        "https://ostad-assignment-final.vercel.app/api/ServiceList"
+      );
       if (res.data.status === "success") {
         set({ ServiceList: res.data.data });
       }
@@ -20,7 +22,9 @@ const ServiceStore = create((set) => ({
   // Read specific service details
   ReadServiceRequest: async (id) => {
     try {
-      const res = await axios.get(`/api/ReadService/${id}`);
+      const res = await axios.get(
+        `https://ostad-assignment-final.vercel.app/api/ReadService/${id}`
+      );
       if (res.data.status === "success") {
         set({ ServiceDetails: res.data.data });
         return res.data.data; // Return service details
@@ -34,11 +38,15 @@ const ServiceStore = create((set) => ({
   // Create a new service
   CreateServiceRequest: async (formData) => {
     try {
-      const res = await axios.post(`/api/CreateService`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        `https://ostad-assignment-final.vercel.app/api/CreateService`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       if (res.data.status === "success") {
         return res.data.data;
       }
@@ -52,7 +60,7 @@ const ServiceStore = create((set) => ({
   EditServiceRequest: async (serviceID, formData) => {
     try {
       const res = await axios.post(
-        `/api/UpdateService/${serviceID}`,
+        `https://ostad-assignment-final.vercel.app/api/UpdateService/${serviceID}`,
         formData,
         {
           headers: {
@@ -80,7 +88,9 @@ const ServiceStore = create((set) => ({
   // Delete a service
   DeleteServiceRequest: async (serviceID) => {
     try {
-      const res = await axios.get(`/api/DeleteService/${serviceID}`);
+      const res = await axios.get(
+        `https://ostad-assignment-final.vercel.app/api/DeleteService/${serviceID}`
+      );
       if (res.data.status === "success") {
         set((state) => ({
           ServiceList: state.ServiceList.filter(

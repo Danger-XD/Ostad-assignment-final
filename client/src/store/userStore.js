@@ -3,7 +3,10 @@ import axios from "axios";
 
 const UserStore = create((set) => ({
   RegisterRequest: async (email, password) => {
-    let res = await axios.post("/api/register", { email, password });
+    let res = await axios.post(
+      "https://ostad-assignment-final.vercel.app/api/register",
+      { email, password }
+    );
     return res.data["status"] === "success";
   },
 
@@ -27,7 +30,10 @@ const UserStore = create((set) => ({
 
   LogoutRequest: async () => {
     try {
-      const res = await axios.get("/api/logOut", { withCredentials: true });
+      const res = await axios.get(
+        "https://ostad-assignment-final.vercel.app/api/logOut",
+        { withCredentials: true }
+      );
       set({ isAuthenticated: false });
       return res.data.status === "success";
     } catch (error) {

@@ -8,7 +8,9 @@ const BlogStore = create((set) => ({
   // Fetch all blogs
   BlogListRequest: async () => {
     try {
-      const res = await axios.get("/api/BlogList");
+      const res = await axios.get(
+        "https://ostad-assignment-final.vercel.app/api/BlogList"
+      );
       if (res.data.status === "success") {
         set({ BlogList: res.data.data });
       }
@@ -20,7 +22,9 @@ const BlogStore = create((set) => ({
   // Read specific blog details
   ReadBlogRequest: async (id) => {
     try {
-      const res = await axios.get(`/api/ReadBlog/${id}`);
+      const res = await axios.get(
+        `https://ostad-assignment-final.vercel.app/api/ReadBlog/${id}`
+      );
       if (res.data.status === "success") {
         set({ BlogDetails: res.data.data });
         return res.data.data; // Return blog details
@@ -34,11 +38,15 @@ const BlogStore = create((set) => ({
   // Create a new blog
   CreateBlogRequest: async (formData) => {
     try {
-      const res = await axios.post(`/api/CreateBlog`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        `https://ostad-assignment-final.vercel.app/api/CreateBlog`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       if (res.data.status === "success") {
         return res.data.data;
       }
@@ -51,11 +59,15 @@ const BlogStore = create((set) => ({
   // Edit a blog
   EditPostRequest: async (blogID, formData) => {
     try {
-      const res = await axios.post(`/api/UpdateBlog/${blogID}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(
+        `https://ostad-assignment-final.vercel.app/api/UpdateBlog/${blogID}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       if (res.data.status === "success") {
         const updatedBlog = res.data.blog; // Extract the updated blog object
         set((state) => ({
@@ -74,7 +86,9 @@ const BlogStore = create((set) => ({
   // Delete a blog
   DeletePostRequest: async (blogID) => {
     try {
-      const res = await axios.get(`/api/DeleteBlog/${blogID}`);
+      const res = await axios.get(
+        `https://ostad-assignment-final.vercel.app/api/DeleteBlog/${blogID}`
+      );
       if (res.data.status === "success") {
         set((state) => ({
           BlogList: state.BlogList.filter((blog) => blog._id !== blogID),
