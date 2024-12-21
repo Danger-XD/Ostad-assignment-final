@@ -27,7 +27,7 @@ const app = express();
 
 /// App Use Default Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://ostad-assignment-final-wzzv.vercel.app'], // Allow dev and production frontends
+  origin: ['http://localhost:3000', 'https://ostad-assignment-final-q6b4.vercel.app'], // Allow dev and production frontends
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 
