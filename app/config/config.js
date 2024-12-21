@@ -1,13 +1,12 @@
 export const PORT = 5000;
-export const DATABASE =
-    'mongodb+srv://syedmahmoud41:57PjqdxIgwuIOQzb@cluster0.pfolnag.mongodb.net/blogWebsite';
+export const DATABASE ='mongodb+srv://syedmahmoud41:57PjqdxIgwuIOQzb@cluster0.pfolnag.mongodb.net/blogWebsite';
 export const JWT_KEY = 'ABC12341241234';
 export const JWT_EXPIRE_TIME = '24h';
 
 export const EMAIL_HOST = 'smtp.gmail.com';
 export const EMAIL_PORT = 465;
 export const EMAIL_SECURITY = true;
-export const EMAIL_USER = process.env.EMAIL_USER || 'chakmacodes24@gmail.com';
+export const EMAIL_USER = process.env.EMAIL_USER || 'sssss@gmail.com';
 export const EMAIL_PASS = process.env.EMAIL_PASS || 'bqmporsyrodbtxem';
 export const EMAIL_UN_AUTH = false;
 
