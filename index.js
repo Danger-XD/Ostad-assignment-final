@@ -6,7 +6,8 @@ import helmet from 'helmet';
 import mongoose from 'mongoose';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import dotenv from 'dotenv';
+dotenv.config();
 import {
   DATABASE,
   MAX_JSON_SIZE,
@@ -40,7 +41,7 @@ app.set('etag', WEB_CACHE);
 
 /// Database Connect
 mongoose
-  .connect(DATABASE, { autoIndex: true })
+  .connect(process.env.DATABASE, { autoIndex: true })
   .then(() => {
     console.log('MongoDB connected');
   })
