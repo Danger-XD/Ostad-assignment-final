@@ -51,6 +51,11 @@ mongoose
 /// App Use Routes
 app.use('/api', router);
 
+// Default route
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
+
 /// Serve Frontend
 // app.use(express.static('client/dist'));
 // app.get('*', (req, res) => {
