@@ -1,12 +1,12 @@
 import fs from 'fs';
 import multer from 'multer';
 import path from 'path';
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 
 
 // Handle __dirname in ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 // Use a temporary directory (for serverless environments like Vercel)
 const uploadDir = path.join('/tmp', 'uploads');
