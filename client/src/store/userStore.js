@@ -13,7 +13,7 @@ const UserStore = create((set) => ({
   LoginRequest: async (email, password) => {
     try {
       const res = await axios.post(
-        "/api/login",
+        "https://ostad-assignment-final.vercel.app/api/login",
         { email, password },
         { withCredentials: true }
       );
