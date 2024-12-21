@@ -9,7 +9,7 @@ const ServiceStore = create((set) => ({
   ServiceListRequest: async () => {
     try {
       const res = await axios.get(
-        "https://ostad-assignment-final.vercel.app/api/ServiceList"
+        "/api/ServiceList"
       );
       if (res.data.status === "success") {
         set({ ServiceList: res.data.data });
@@ -23,7 +23,7 @@ const ServiceStore = create((set) => ({
   ReadServiceRequest: async (id) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/ReadService/${id}`
+        `/api/ReadService/${id}`
       );
       if (res.data.status === "success") {
         set({ ServiceDetails: res.data.data });
@@ -39,7 +39,7 @@ const ServiceStore = create((set) => ({
   CreateServiceRequest: async (formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/CreateService`,
+        `/api/CreateService`,
         formData,
         {
           headers: {
@@ -60,7 +60,7 @@ const ServiceStore = create((set) => ({
   EditServiceRequest: async (serviceID, formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/UpdateService/${serviceID}`,
+        `/api/UpdateService/${serviceID}`,
         formData,
         {
           headers: {
@@ -89,7 +89,7 @@ const ServiceStore = create((set) => ({
   DeleteServiceRequest: async (serviceID) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/DeleteService/${serviceID}`
+        `/api/DeleteService/${serviceID}`
       );
       if (res.data.status === "success") {
         set((state) => ({

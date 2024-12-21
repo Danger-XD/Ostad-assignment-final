@@ -9,7 +9,7 @@ const TeamStore = create((set) => ({
   TeamListRequest: async () => {
     try {
       const res = await axios.get(
-        "https://ostad-assignment-final.vercel.app/api/TeamList"
+        "/api/TeamList"
       );
       if (res.data.status === "success") {
         set({ TeamList: res.data.data });
@@ -23,7 +23,7 @@ const TeamStore = create((set) => ({
   ReadTeamRequest: async (id) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/ReadTeam/${id}`
+        `/api/ReadTeam/${id}`
       );
       if (res.data.status === "success") {
         set({ TeamDetails: res.data.data });
@@ -39,7 +39,7 @@ const TeamStore = create((set) => ({
   CreateTeamRequest: async (formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/CreateTeam`,
+        `/api/CreateTeam`,
         formData,
         {
           headers: {
@@ -60,7 +60,7 @@ const TeamStore = create((set) => ({
   EditTeamRequest: async (teamID, formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/UpdateTeam/${teamID}`,
+        `/api/UpdateTeam/${teamID}`,
         formData,
         {
           headers: {
@@ -87,7 +87,7 @@ const TeamStore = create((set) => ({
   DeleteTeamRequest: async (teamID) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/DeleteTeam/${teamID}`
+        `/api/DeleteTeam/${teamID}`
       );
       if (res.data.status === "success") {
         set((state) => ({

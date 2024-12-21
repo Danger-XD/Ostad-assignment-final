@@ -1,5 +1,3 @@
-export const PORT = 5000;
-export const DATABASE ='mongodb+srv://syedmahmoud41:57PjqdxIgwuIOQzb@cluster0.pfolnag.mongodb.net/blogWebsite';
 export const JWT_KEY = 'ABC12341241234';
 export const JWT_EXPIRE_TIME = '24h';
 

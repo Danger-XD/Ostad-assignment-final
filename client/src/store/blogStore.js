@@ -9,7 +9,7 @@ const BlogStore = create((set) => ({
   BlogListRequest: async () => {
     try {
       const res = await axios.get(
-        "https://ostad-assignment-final.vercel.app/api/BlogList"
+        "/api/BlogList"
       );
       if (res.data.status === "success") {
         set({ BlogList: res.data.data });
@@ -23,7 +23,7 @@ const BlogStore = create((set) => ({
   ReadBlogRequest: async (id) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/ReadBlog/${id}`
+        `/api/ReadBlog/${id}`
       );
       if (res.data.status === "success") {
         set({ BlogDetails: res.data.data });
@@ -39,7 +39,7 @@ const BlogStore = create((set) => ({
   CreateBlogRequest: async (formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/CreateBlog`,
+        `/api/CreateBlog`,
         formData,
         {
           headers: {
@@ -60,7 +60,7 @@ const BlogStore = create((set) => ({
   EditPostRequest: async (blogID, formData) => {
     try {
       const res = await axios.post(
-        `https://ostad-assignment-final.vercel.app/api/UpdateBlog/${blogID}`,
+        `/api/UpdateBlog/${blogID}`,
         formData,
         {
           headers: {
@@ -87,7 +87,7 @@ const BlogStore = create((set) => ({
   DeletePostRequest: async (blogID) => {
     try {
       const res = await axios.get(
-        `https://ostad-assignment-final.vercel.app/api/DeleteBlog/${blogID}`
+        `/api/DeleteBlog/${blogID}`
       );
       if (res.data.status === "success") {
         set((state) => ({

@@ -1,7 +1,7 @@
 import { JWT_EXPIRE_TIME, JWT_KEY } from "../config/config.js";
 import jwt from "jsonwebtoken";
 export const EncodeToken = (email) => {
-  let key = process.env.JWT_KEY;
+  let key = JWT_KEY;
   let expire = JWT_EXPIRE_TIME;
   let payload = { email };
   return jwt.sign(payload, key, { expiresIn: expire });
@@ -9,7 +9,7 @@ export const EncodeToken = (email) => {
 
 export const DecodeToken = (token) => {
   try {
-    let key = process.env.JWT_KEY;
+    let key = JWT_KEY;
     let expire = JWT_EXPIRE_TIME;
     let decoded = jwt.verify(token, key);
 
