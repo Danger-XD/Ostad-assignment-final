@@ -3,7 +3,7 @@ import axios from "axios";
 
 const UserStore = create((set) => ({
   RegisterRequest: async (email, password) => {
-    let res = await axios.post("api/register", { email, password });
+    let res = await axios.post("/api/register", { email, password });
     return res.data["status"] === "success";
   },
 

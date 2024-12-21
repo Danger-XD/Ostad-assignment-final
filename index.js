@@ -26,7 +26,11 @@ import router from './routes/api.js';
 const app = express();
 
 /// App Use Default Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://ostad-assignment-final-wzzv.vercel.app'], // Allow dev and production frontends
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
 app.use(express.json({ limit: MAX_JSON_SIZE }));
 app.use(express.urlencoded({ extended: URL_ENCODE }));
 app.use(helmet());
